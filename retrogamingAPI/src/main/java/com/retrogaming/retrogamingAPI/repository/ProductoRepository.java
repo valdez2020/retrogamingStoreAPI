@@ -1,7 +1,6 @@
 package com.retrogaming.retrogamingAPI.repository;
 
-import com.retrogaming.retrogamingAPI.model.Producto;
-import com.retrogaming.retrogamingAPI.service.ProductoService;
+import com.retrogaming.retrogamingAPI.entity.Producto;
 import java.util.List;
 import java.util.Optional;
 
@@ -9,7 +8,7 @@ public interface ProductoRepository{
 
   Producto guardaProducto(Producto nuevoProducto);
 
-  void eliminarProducto(Producto productoEliminado);
+  Producto eliminarProducto(Producto productoEliminado);
 
   List<Producto> ListaProductos();
 

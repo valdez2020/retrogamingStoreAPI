@@ -1,6 +1,6 @@
 package com.retrogaming.retrogamingAPI.repository;
 
-import com.retrogaming.retrogamingAPI.model.Producto;
+import com.retrogaming.retrogamingAPI.entity.Producto;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

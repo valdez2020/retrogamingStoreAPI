@@ -1,10 +1,9 @@
 package com.retrogaming.retrogamingAPI.repository;
 
-import com.retrogaming.retrogamingAPI.model.Producto;
+import com.retrogaming.retrogamingAPI.entity.Producto;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Repository;
 
 @Repository("ProductoDBRepository")
@@ -19,17 +18,18 @@ public class ProductoDBRepository implements ProductoRepository{
   }
 
   @Override
-  public void eliminarProducto(Producto productoEliminado){
+  public Producto eliminarProducto(Producto productoEliminado){
   this.repositoryJPA.delete(productoEliminado);
+  return productoEliminado;
   }
 
 @Override
   public   List<Producto> ListaProductos(){
-    return null;
+    return this.repositoryJPA.findAll();
 }
 @Override
   public Optional<Producto> buscarPorId(Long id){
-    return Optional.empty();
+    return this.repositoryJPA.findById(id);
 }
 
   @Override
